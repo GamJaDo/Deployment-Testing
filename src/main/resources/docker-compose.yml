@@ -11,7 +11,7 @@ services:
   db:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_ROOT_PASSWORD: jj6907**
       MYSQL_DATABASE: testdatabase
       MYSQL_USER: testuser
       MYSQL_PASSWORD: testpassword
