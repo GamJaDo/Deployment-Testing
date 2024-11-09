@@ -6,8 +6,8 @@ services:
       context: .
     ports:
       - "8081:8081"
-    environment:
-      - SPRING_SERVER_PORT=8081
+    depends_on:
+      - db
   db:
     image: mysql:latest
     environment:
