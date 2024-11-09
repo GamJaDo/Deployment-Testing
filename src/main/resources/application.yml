@@ -3,7 +3,7 @@ spring:
     port: 8081
     address: 0.0.0.0
   datasource:
-    url: jdbc:mysql://mysql-container:3306/testdatabase
+    url: jdbc:mysql://db:3306/testdatabase
     username: testuser
     password: testpassword
     driver-class-name: com.mysql.cj.jdbc.Driver
