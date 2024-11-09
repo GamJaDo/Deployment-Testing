@@ -1,14 +1,11 @@
-# OpenJDK 21 JDK 이미지 사용
-FROM openjdk:21-jdk-slim
+# Base image for running Java applications
+FROM eclipse-temurin:21-jre-alpine
 
-# 빌드된 JAR 파일을 복사하기 위해 경로 설정
-ARG JAR_FILE=build/libs/docker-test-0.0.1-SNAPSHOT.jar
+# Set working directory
+WORKDIR /app
 
-# JAR 파일을 컨테이너의 app.jar로 복사
-COPY ${JAR_FILE} app.jar
+# Copy the boot jar to the container
+COPY C:/Users/ByungSoo/Desktop/docker-test/build/libs/*.jar app.jar
 
-# 애플리케이션 실행
-ENTRYPOINT ["java", "-jar", "/app.jar"]
-
-# 기본 포트 설정
-EXPOSE 8081
+# Run the Spring Boot application
+ENTRYPOINT ["java", "-jar", "app.jar"]
