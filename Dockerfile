@@ -11,4 +11,4 @@ COPY ${JAR_FILE} app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]
 
 # 기본 포트 설정
-EXPOSE 8080
+EXPOSE 8081
