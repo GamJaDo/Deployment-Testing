@@ -1,4 +1,6 @@
 spring:
+  server:
+    port: 8081
   datasource:
     url: jdbc:mysql://mysql-container:3306/testdatabase
     username: testuser
