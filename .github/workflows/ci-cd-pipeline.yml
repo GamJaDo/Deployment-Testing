@@ -70,7 +70,7 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa  # SSH 키 권한 설정
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa kbs77@${{ secrets.SERVER_IP }} << "EOF"
-          cd /path/to/your/repo  # 배포 디렉토리로 이동
+          cd /home/kbs77/project  # 배포 디렉토리로 이동
           git pull origin master  # 최신 코드 받아오기
           docker-compose -f docker-compose.yml down  # 기존 컨테이너 종료
           docker-compose -f docker-compose.yml up -d  # 새로운 컨테이너 실행
