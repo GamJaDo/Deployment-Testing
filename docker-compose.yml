@@ -16,7 +16,7 @@ services:
 
   spring-boot-app:
     build:
-      context: .
+      context: .  # 현재 디렉토리
       dockerfile: Dockerfile
     container_name: docker-test-app
     depends_on:
