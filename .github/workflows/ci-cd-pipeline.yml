@@ -14,12 +14,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. Java 17 설치 (Gradle 빌드를 위해 Java 17 필요)
-      - name: Set up JDK 17
+      # 2. Java 21 설치 (Gradle 빌드를 위해 Java 21 필요)
+      - name: Set up JDK 21
         uses: actions/setup-java@v3
         with:
-          java-version: '17'
-          distribution: 'adoptium'  # 변경된 부분: adoptium으로 수정
+          java-version: '21'
+          distribution: 'zulu'  # zulu를 사용하여 Java 21 설치
           java-package: jdk
 
       # 3. Gradle Wrapper에 실행 권한 부여
