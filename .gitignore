@@ -37,7 +37,7 @@ out/
 .vscode/
 
 # Ignore the build folder and everything inside it
-build/
+build/*
 
 # But don't ignore the .jar files in the build/libs directory
 !build/libs/
