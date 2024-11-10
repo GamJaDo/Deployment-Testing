@@ -19,7 +19,8 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
-          distribution: 'adoptopenjdk'
+          distribution: 'adoptium'  # 변경된 부분: adoptium으로 수정
+          java-package: jdk
 
       # 3. Gradle Wrapper에 실행 권한 부여
       - name: Give execute permission to gradlew
