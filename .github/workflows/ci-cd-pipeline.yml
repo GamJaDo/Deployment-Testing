@@ -31,9 +31,14 @@ jobs:
         run: ./gradlew build  # .jar 파일을 build/libs/에 생성
 
       # 5. MySQL 설치 및 설정
-      - name: Set up MySQL with Docker
-        run: |
-          docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD -e MYSQL_DATABASE=testdatabase -e MYSQL_USER=testuser -e MYSQL_PASSWORD=testpassword -d mysql:8.0
+      - name: Set up MySQL
+        uses: samin/mysql-action@v1
+        with:
+          mysql-version: '8.0'
+          mysql-db: testdatabase
+          mysql-root-password: jj6907**  # root 비밀번호 설정
+          mysql-user: testuser
+          mysql-password: testpassword
 
       # 6. Docker Compose 설치
       - name: Set up Docker Compose
@@ -64,12 +69,11 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa  # SSH 키 권한 설정
-          ssh -i ~/.ssh/id_rsa kbs77@${{ secrets.SERVER_IP }} << 'EOF'
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa kbs77@${{ secrets.SERVER_IP }
           cd /path/to/your/repo  # 배포 디렉토리로 이동
           git pull origin master  # 최신 코드 받아오기
-          docker-compose -f /path/to/your/docker-compose.yml down  # 기존 컨테이너 종료
-          docker-compose -f /path/to/your/docker-compose.yml up -d  # 새로운 컨테이너 실행
+          docker-compose -f docker-compose.yml down  # 기존 컨테이너 종료
+          docker-compose -f docker-compose.yml up -d  # 새로운 컨테이너 실행
           EOF
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}  # SSH 키를 환경 변수로 전달
-          SERVER_IP: ${{ secrets.SERVER_IP }}  # 서버 IP를 환경 변수로 전달
