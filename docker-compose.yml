@@ -1,11 +1,9 @@
-version: '3.8'
-
 services:
   mysql:
     image: mysql:8.0
     container_name: mysql-container
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_ROOT_PASSWORD: jj6907**  # root 비밀번호 설정
       MYSQL_DATABASE: testdatabase
       MYSQL_USER: testuser
       MYSQL_PASSWORD: testpassword
@@ -14,7 +12,7 @@ services:
     networks:
       - app-network
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "mysql-container", "-u", "root", "-p$MYSQL_ROOT_PASSWORD"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$MYSQL_ROOT_PASSWORD"]
       interval: 30s
       retries: 5
       start_period: 5s
@@ -22,7 +20,7 @@ services:
 
   spring-boot-app:
     build:
-      context: .  # 현재 디렉토리
+      context: .
       dockerfile: Dockerfile
     container_name: docker-test-app
     depends_on:
