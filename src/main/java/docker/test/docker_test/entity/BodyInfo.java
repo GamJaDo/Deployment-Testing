@@ -22,6 +22,7 @@ public class BodyInfo {
 
     private String inbodyImageUrl;
 
+    @Column(name = "create_date")
     private LocalDateTime createDate;
 
     private final boolean deleted = Boolean.FALSE;
