@@ -18,7 +18,7 @@ public class TempController {
 
     @GetMapping("/hello")
     public ResponseEntity<String> printHello(){
-        return ResponseEntity.status(HttpStatus.OK).body("hello12345");
+        return ResponseEntity.status(HttpStatus.OK).body("hello123456");
     }
 
     @PostMapping("/add")
