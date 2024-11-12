@@ -17,7 +17,7 @@ public class BodyInfo {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @Column(name = "inbody_image_url")
