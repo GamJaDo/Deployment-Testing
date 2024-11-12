@@ -20,6 +20,7 @@ public class BodyInfo {
     @JoinColumn(nullable = false)
     private User user;
 
+    @Column(name = "inbody_image_url")
     private String inbodyImageUrl;
 
     @Column(name = "create_date")
