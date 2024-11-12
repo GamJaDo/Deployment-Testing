@@ -26,10 +26,10 @@ public class Preference {
     @Enumerated(EnumType.STRING)
     private TrainerGender gender;
 
-    @Column(nullable = false)
+    @Column(name = "`range`", nullable = false)
     private int range;
 
-    @Column(name = "`range`", nullable = false)
+    @Column(nullable = false)
     private String goal;
 
     public Preference(User user, BodyInfo bodyInfo, Sports sports, TrainerGender gender, int range,
