@@ -8,4 +8,4 @@ VALUES (1, 'https://nurspace-bucket.s3.ap-northeast-2.amazonaws.com/default_prof
         FALSE);
 
 INSERT INTO SPORTS_TB(name, deleted)
-VALUES ('PT', 'FALSE');
+VALUES ('PT', false);

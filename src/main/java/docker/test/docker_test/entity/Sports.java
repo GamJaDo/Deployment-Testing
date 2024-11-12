@@ -16,7 +16,7 @@ public class Sports {
 
     private String name;
 
-    private final boolean deleted = Boolean.FALSE;
+    private boolean deleted = false;
 
     protected Sports() {
     }
