@@ -18,7 +18,7 @@ public class PreferenceController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> registerPreference(@RequestHeader("Authorization") Token token,
+    public ResponseEntity<Void> registerPreference(@RequestBody Token token,
                                                    @RequestBody PreferenceRequest request) {
         preferenceService.registerPreference(token.id(), request);
         return ResponseEntity.status(HttpStatus.CREATED).build();
