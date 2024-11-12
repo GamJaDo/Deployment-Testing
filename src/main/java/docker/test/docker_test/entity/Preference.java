@@ -29,7 +29,7 @@ public class Preference {
     @Column(nullable = false)
     private int range;
 
-    @Column(nullable = false)
+    @Column(name = "`range`", nullable = false)
     private String goal;
 
     public Preference(User user, BodyInfo bodyInfo, Sports sports, TrainerGender gender, int range,
