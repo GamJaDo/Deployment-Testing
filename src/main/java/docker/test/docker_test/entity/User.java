@@ -19,7 +19,7 @@ public class User {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = true)
+    @Column(name = "profile_image_url", nullable = true)
     private String profileImageUrl;
 
     @Column(nullable = false)
