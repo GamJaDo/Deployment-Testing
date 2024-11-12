@@ -6,7 +6,7 @@ import org.hibernate.annotations.SQLRestriction;
 
 @Entity
 @Table(name = "SPORTS_TB")
-@SQLDelete(sql = "UPDATE sports SET deleted = true WHERE id = ?")
+@SQLDelete(sql = "UPDATE SPORTS_TB SET deleted = true WHERE id = ?")
 @SQLRestriction("deleted = false")
 public class Sports {
 
